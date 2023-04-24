@@ -45,8 +45,8 @@ ext {
             appcompat         : 'androidx.appcompat:appcompat:1.3.0',
             material          : 'com.google.android.material:material:1.4.0',
             constraintlayout  : 'androidx.constraintlayout:constraintlayout:2.0.4',
-            liveDataKtx       : 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1',
-            viewModelKtx      : 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1',
+            liveDataKtx       : 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.0',
+            viewModelKtx      : 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0',
             navigationFragment: 'androidx.navigation:navigation-fragment-ktx:2.3.5',
             navigationUI      : 'androidx.navigation:navigation-ui-ktx:2.3.5',
 

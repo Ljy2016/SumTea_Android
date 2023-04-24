@@ -75,6 +75,7 @@ android {
     packagingOptions {
         exclude 'META-INF/atomicfu.kotlin_module'
     }
+    namespace 'com.sum.tea'
 }
 
 dependencies {
