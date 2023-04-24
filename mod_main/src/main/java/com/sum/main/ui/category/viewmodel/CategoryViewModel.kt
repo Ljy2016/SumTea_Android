@@ -1,7 +1,9 @@
 package com.sum.main.ui.category.viewmodel
 
 import androidx.lifecycle.MutableLiveData
+import com.sum.common.constant.LOGIN_ACTIVITY_LOGIN
 import com.sum.common.model.CategoryItem
+import com.sum.common.model.CategorySecondItem
 import com.sum.framework.toast.TipsToast
 import com.sum.network.callback.IApiErrorCallback
 import com.sum.network.manager.ApiManager
@@ -29,7 +31,20 @@ class CategoryViewModel : BaseViewModel() {
                 categoryItemLiveData.value = null
             }
         }) {
-            categoryItemLiveData.value = it
+            categoryItemLiveData.value = addMyCategory(it)
         }
     }
+
+    private fun addMyCategory(source: MutableList<CategoryItem>?): MutableList<CategoryItem> {
+        val myCategories = mutableListOf(CategoryItem(66661, "线程").apply {
+            articles?.addAll(
+                mutableListOf(
+                    CategorySecondItem(666611, LOGIN_ACTIVITY_LOGIN, "线程与性能")
+                )
+            )
+        })
+        source?.addAll(0, myCategories)
+        return source ?: myCategories
+    }
+
 }
