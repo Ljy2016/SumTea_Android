@@ -1,6 +1,7 @@
 package com.sum.main.ui.category.viewmodel
 
 import androidx.lifecycle.MutableLiveData
+import com.sum.common.constant.ESP_32_MAIN
 import com.sum.common.constant.LOGIN_ACTIVITY_LOGIN
 import com.sum.common.model.CategoryItem
 import com.sum.common.model.CategorySecondItem
@@ -39,7 +40,8 @@ class CategoryViewModel : BaseViewModel() {
         val myCategories = mutableListOf(CategoryItem(66661, "线程").apply {
             articles?.addAll(
                 mutableListOf(
-                    CategorySecondItem(666611, LOGIN_ACTIVITY_LOGIN, "线程与性能")
+                    CategorySecondItem(666611, LOGIN_ACTIVITY_LOGIN, "线程与性能"),
+                    CategorySecondItem(666611, ESP_32_MAIN, "ESP_32")
                 )
             )
         })

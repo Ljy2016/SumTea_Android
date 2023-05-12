@@ -68,3 +68,9 @@ const val MAIN_SERVICE_HOME = "/main/service/home"
  * 搜索模块模块-搜索
  */
 const val SEARCH_SERVICE_SEARCH = "/search/service/search"
+
+/**
+ * esp 32
+ */
+const val ESP_32_MAIN = "/esp32/main"
+

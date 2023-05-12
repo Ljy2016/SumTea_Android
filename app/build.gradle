@@ -134,6 +134,7 @@ dependencies {
     implementation project(path: ':mod_login')
     implementation project(path: ':mod_search')
     implementation project(path: ':mod_video')
+    implementation project(path: ':mod_esp32')
     implementation project(path: ':lib_framework')
     implementation project(path: ':lib_network')
     implementation project(path: ':lib_common')
