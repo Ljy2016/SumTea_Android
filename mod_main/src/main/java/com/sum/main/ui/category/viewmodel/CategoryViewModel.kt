@@ -41,7 +41,9 @@ class CategoryViewModel : BaseViewModel() {
             articles?.addAll(
                 mutableListOf(
                     CategorySecondItem(666611, LOGIN_ACTIVITY_LOGIN, "线程与性能"),
-                    CategorySecondItem(666611, ESP_32_MAIN, "ESP_32")
+                    CategorySecondItem(666611, ESP_32_MAIN, "ESP_32").apply {
+                        type="internal"
+                    }
                 )
             )
         })

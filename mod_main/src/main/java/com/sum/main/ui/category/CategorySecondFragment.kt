@@ -3,7 +3,9 @@ package com.sum.main.ui.category
 import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.GridLayoutManager
+import com.alibaba.android.arouter.launcher.ARouter
 import com.sum.common.constant.KEY_LIST
+import com.sum.common.constant.USER_ACTIVITY_SETTING
 import com.sum.common.model.CategorySecondItem
 import com.sum.common.provider.MainServiceProvider
 import com.sum.framework.base.BaseMvvmFragment
@@ -22,7 +24,8 @@ import com.sum.main.ui.category.viewmodel.CategoryViewModel
  * @date   2023/3/19 22:31
  * @desc   分类item
  */
-class CategorySecondFragment : BaseMvvmFragment<FragmentCategorySecondBinding, CategoryViewModel>() {
+class CategorySecondFragment :
+    BaseMvvmFragment<FragmentCategorySecondBinding, CategoryViewModel>() {
     private lateinit var mAdapter: CategorySecondItemAdapter
 
     companion object {
@@ -45,11 +48,13 @@ class CategorySecondFragment : BaseMvvmFragment<FragmentCategorySecondBinding, C
         mAdapter.onItemClickListener = { _: View, position: Int ->
             val item = mAdapter.getItem(position)
             if (item != null && !item.link.isNullOrEmpty()) {
-                MainServiceProvider.toArticleDetail(
-                    context = requireContext(),
-                    url = item.link!!,
-                    title = item.title ?: ""
-                )
+                if (item.type.isNotEmpty()) {
+                    ARouter.getInstance().build(item.link).navigation()
+                } else {
+                    MainServiceProvider.toArticleDetail(
+                        context = requireContext(), url = item.link!!, title = item.title ?: ""
+                    )
+                }
             }
         }
     }

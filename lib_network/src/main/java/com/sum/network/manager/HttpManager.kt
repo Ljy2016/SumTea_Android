@@ -23,6 +23,7 @@ import java.util.concurrent.TimeUnit
  */
 object HttpManager {
     private val mRetrofit: Retrofit
+    private val mRetrofitEsp: Retrofit
 
     init {
         mRetrofit = Retrofit.Builder()
@@ -30,6 +31,11 @@ object HttpManager {
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
+        mRetrofitEsp = Retrofit.Builder()
+            .client(initOkHttpClient())
+            .baseUrl("http://192.168.3.8")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
     }
 
     /**
@@ -39,6 +45,9 @@ object HttpManager {
         return mRetrofit.create(apiService)
     }
 
+    fun <T> createEspApi(apiService: Class<T>): T {
+        return mRetrofitEsp.create(apiService)
+    }
     /**
      * 初始化OkHttp
      */

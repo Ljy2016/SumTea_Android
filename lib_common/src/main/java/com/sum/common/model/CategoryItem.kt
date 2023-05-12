@@ -11,14 +11,13 @@ import kotlinx.parcelize.Parcelize
 data class CategoryItem(
     val cid: Int?,
     val name: String?,
-    var isSelected: Boolean?=false,
+    var isSelected: Boolean? = false,
     val articles: MutableList<CategorySecondItem>? = mutableListOf()
 )
 
 @Parcelize
 data class CategorySecondItem(
-    val id: Int?,
-    val link: String?,
-    val title: String?,
-    val chapterId: Int?=0
-) : Parcelable
+    val id: Int?, val link: String?, val title: String?, val chapterId: Int? = 0
+) : Parcelable {
+    var type = ""
+}

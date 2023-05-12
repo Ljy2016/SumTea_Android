@@ -3,7 +3,7 @@
 
     <application>
         <activity
-            android:name=".ThreadCpuActivity"
+            android:name=".EspMainActivity"
             android:exported="true">
         </activity>
     </application>
